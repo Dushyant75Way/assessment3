@@ -1,0 +1,38 @@
+[
+  {
+    "quizId": 1,
+    "quizTitle": "JavaScript Basics",
+    "rankings": [
+      {
+        "userId": 2,
+        "name": "Alice Johnson",
+        "score": 90,
+        "timeTaken": "8m 32s"
+      },
+      {
+        "userId": 3,
+        "name": "Bob Smith",
+        "score": 85,
+        "timeTaken": "9m 15s"
+      }
+    ]
+  },
+  {
+    "quizId": 2,
+    "quizTitle": "React Fundamentals",
+    "rankings": [
+      {
+        "userId": 3,
+        "name": "Bob Smith",
+        "score": 95,
+        "timeTaken": "7m 45s"
+      },
+      {
+        "userId": 2,
+        "name": "Alice Johnson",
+        "score": 88,
+        "timeTaken": "9m 10s"
+      }
+    ]
+  }
+]

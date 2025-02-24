@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "JavaScript Basics",
+    "description": "Test your knowledge of JavaScript fundamentals.",
+    "questions": [
+      {
+        "id": 101,
+        "question": "What is the output of `typeof null`?",
+        "options": ["object", "null", "undefined", "number"],
+        "answer": "object",
+        "type": "MCQ"
+      },
+      {
+        "id": 102,
+        "question": "JavaScript is a ___ language.",
+        "options": ["Compiled", "Interpreted", "Both", "None"],
+        "answer": "Interpreted",
+        "type": "MCQ"
+      },
+      {
+        "id": 103,
+        "question": "True or False: `let` and `var` are function-scoped.",
+        "answer": "False",
+        "type": "True/False"
+      }
+    ],
+    "timeLimit": 10
+  },
+  {
+    "id": 2,
+    "title": "React Fundamentals",
+    "description": "Quiz covering the basics of React.js.",
+    "questions": [
+      {
+        "id": 201,
+        "question": "Which hook is used for managing state in functional components?",
+        "options": ["useState", "useEffect", "useContext", "useReducer"],
+        "answer": "useState",
+        "type": "MCQ"
+      },
+      {
+        "id": 202,
+        "question": "What is JSX?",
+        "options": [
+          "JavaScript XML",
+          "JSON-like syntax",
+          "A new HTML version",
+          "A CSS preprocessor"
+        ],
+        "answer": "JavaScript XML",
+        "type": "MCQ"
+      }
+    ],
+    "timeLimit": 15
+  }
+]
