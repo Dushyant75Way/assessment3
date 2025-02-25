@@ -9,10 +9,50 @@ import {
   Container,
   Toolbar,
   Box,
+  Paper,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  root: {
+    height: "100vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background: "linear-gradient(to right, #6a11cb, #2575fc)",
+  },
+  paper: {
+    padding: "40px",
+    width: "100%",
+    maxWidth: "420px",
+    borderRadius: "12px",
+    boxShadow: "0px 6px 20px rgba(0, 0, 0, 0.3)",
+    textAlign: "center",
+    backgroundColor: "#fff",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "20px",
+    minHeight: "250px", // Increased height
+    // marginBottom: "20px"
+  },
+  button: {
+    padding: "14px",
+    fontSize: "1rem",
+    fontWeight: "bold",
+    borderRadius: "8px",
+    marginTop: "20px", // More spacing from fields
+    width: "100%",
+  },
+  inputField: {
+    marginBottom: "20px", // Increased spacing
+  },
+});
 
 const validationSchema = yup.object({
   email: yup.string().required("email is required"),
@@ -22,6 +62,7 @@ const validationSchema = yup.object({
 type FormData = yup.InferType<typeof validationSchema>;
 
 const Login = () => {
+  const classes = useStyles();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -45,50 +86,47 @@ const Login = () => {
   };
 
   return (
-    // <Container maxWidth="sm" sx={{ mt: 5 }}>
-    <Box
-      height="100vh"
-      width="100vw"
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-    >
-      {/* <Toolbar />
-      <Toolbar /> */}
-      <Box>
-        <Typography variant="h4" component="h1">
-          <b>Welcome!</b>
+    <Box className={classes.root}>
+      <Paper elevation={6} className={classes.paper}>
+        <Typography variant="h4" fontWeight="bold" color="primary" gutterBottom>
+          Welcome Back!
         </Typography>
-        <Typography my={1}>Sign in to continue.</Typography>
-      </Box>
-      <form onSubmit={handleSubmit(handleLogin)}>
-        <TextField
-          label="Email"
-          fullWidth
-          {...register("email", { required: "Email is required" })}
-          error={!!errors.email}
-          helperText={errors.email?.message}
-          sx={{ mb: 2 }}
-        />
-        <TextField
-          label="Password"
-          type="password"
-          fullWidth
-          {...register("password", { required: "Password is required" })}
-          error={!!errors.password}
-          helperText={errors.password?.message}
-          sx={{ mb: 2 }}
-        />
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          fullWidth
-          disabled={!isValid}
-        >
-          Login
-        </Button>
-      </form>
+        <Typography variant="body1" color="textSecondary">
+          Sign in to continue
+        </Typography>
+
+        <form onSubmit={handleSubmit(handleLogin)} className={classes.form}>
+          <TextField
+            label="Email"
+            variant="outlined"
+            fullWidth
+            {...register("email")}
+            error={!!errors.email}
+            helperText={errors.email?.message}
+            className={classes.inputField}
+            sx={{ mb: "20px" }}
+          />
+          <TextField
+            label="Password"
+            type="password"
+            variant="outlined"
+            fullWidth
+            {...register("password")}
+            error={!!errors.password}
+            helperText={errors.password?.message}
+            className={classes.inputField}
+            sx={{ mb: "20px" }}
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            className={classes.button}
+          >
+            Login
+          </Button>
+        </form>
+      </Paper>
     </Box>
   );
 };

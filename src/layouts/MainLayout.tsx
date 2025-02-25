@@ -38,8 +38,8 @@ const useStyles = makeStyles({
   },
   content: {
     flexGrow: 1,
-    padding: "20px",
-    marginTop: "64px",
+    // padding: "20px",
+    // marginTop: "64px",
   },
   link: {
     textDecoration: "none",
@@ -121,7 +121,7 @@ const MainLayout = () => {
           marginLeft: open ? 240 : 0, // Adjust when drawer is open
           transition: "margin 0.3s ease-out",
           width: open ? "calc(100% - 240px)" : "100%",
-          padding: "20px",
+          // padding: "20px",
           marginTop: "64px", // Push below AppBar
         }}
       >
