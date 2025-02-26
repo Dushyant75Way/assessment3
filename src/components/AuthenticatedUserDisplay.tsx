@@ -49,7 +49,7 @@ const AuthenticatedUserDisplay = ({ setOpen }: RegisterLoginProps) => {
         <ListItemButton
           onClick={() => {
             navigate("/");
-            setOpen(false); // ✅ Closes the drawer
+            setOpen(false);
           }}
           className={classes.link}
         >
